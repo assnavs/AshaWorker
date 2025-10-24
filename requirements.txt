@@ -1,0 +1,11 @@
+python=3.6.5
+Django==3.2.7
+mysqlclient==2.0.3
+simplejson==3.17.6
+python-certifi-win32==1.6.1
+pycryptodome==3.17
+pycurl==7.43.0.5
+pyAesCrypt==6.0.0
+opencv-contrib-python==4.6.0.66
+opencv-python==4.6.0.66
+certifi==2022.9.24

@@ -1,0 +1,139 @@
+{% load static %}
+{% block content %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>ASHA - ACCREDITED SOCIAL HEALTH ACTIVIST PORTAL</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Free HTML Templates" name="keywords">
+    <meta content="Free HTML Templates" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'img/logo.jpg' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Rubik&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/lightbox/css/lightbox.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Navbar Start -->
+    <div class="container-fluid bg-white position-relative">
+        <nav class="navbar navbar-expand-lg bg-white navbar-light py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand text-secondary">
+                <a class="navbar-brand" href="#"><img width="75" height="75" src="{% static 'img/logo.jpg' %}" alt="" class="brand-img"></a>
+                <h1 class="display-4 text-uppercase">ASHA</h1>
+            </a>
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+           <div class="navbar-nav ml-auto py-0 pr-3 border-right">
+
+
+                    {% if request.session.aid %}
+                    <div class="mt-6 pt-2">
+                    <a href="http://127.0.0.1:8000/index" class="nav-item nav-link">Home</a>
+                    </div>
+                    <div class="mt-6 pt-2">
+                    <a href="http://127.0.0.1:8000/ashaprofile" class="nav-item nav-link">Profile</a>
+                    </div>
+                    <div class="mt-6 pt-2">
+                    <a href="http://127.0.0.1:8000/vacreg" class="nav-item nav-link">Vaccine</a>
+                    </div>
+					  <div class="mt-6 pt-2">
+                    <a href="http://127.0.0.1:8000/pregnanttt" class="nav-item nav-link">Pregnant Ladies</a>
+                    </div>
+					 <div class="mt-6 pt-2">
+                    <a href="http://127.0.0.1:8000/userquestion" class="nav-item nav-link">Questions</a>
+                    </div>
+					 <div class="mt-6 pt-2">
+                    <a href="http://127.0.0.1:8000/ashareport" class="nav-item nav-link">Reports</a>
+                    </div>
+					
+                   
+                    <div class="mt-6 pt-2">
+                        <a href="http://127.0.0.1:8000/logout" class="nav-item nav-link">Logout</a>
+                        </div>
+
+
+
+                        {% elif request.session.uid %}
+                        <div class="mt-6 pt-2">
+                        <a href="http://127.0.0.1:8000/index" class="nav-item nav-link">Home</a>
+                        </div> 
+						<div class="mt-6 pt-2">
+                        <a href="http://127.0.0.1:8000/userprofile" class="nav-item nav-link">Profile</a>
+                        </div>
+						<div class="mt-6 pt-2">
+                        <a href="http://127.0.0.1:8000/viewashaworkerss" class="nav-item nav-link">View Ashaworkers</a>
+                        </div>
+						<div class="mt-6 pt-2">
+                        <a href="http://127.0.0.1:8000/viewvaccine" class="nav-item nav-link">Vaccination</a>
+                        </div>
+						<div class="mt-6 pt-2">
+                        <a href="http://127.0.0.1:8000/askquestion" class="nav-item nav-link">Ask Questions</a>
+                        </div>
+						<div class="mt-6 pt-2">
+                        <a href="http://127.0.0.1:8000/viewrepply" class="nav-item nav-link">View Reply</a>
+                        </div>
+						
+                        <div class="mt-6 pt-2">
+                            <a href="http://127.0.0.1:8000/logout" class="nav-item nav-link">Logout</a>
+                            </div>
+                       
+                   
+                    {% elif request.session.admin %}
+                    
+                    <a href="http://127.0.0.1:8000/ainstruction" class="nav-item nav-link">Add Instruction</a>
+                    <a href="http://127.0.0.1:8000/ucview" class="nav-item nav-link">User Details</a>
+                    <a href="http://127.0.0.1:8000/aregister" class="nav-item nav-link">Asha Registration</a>
+                    <a href="http://127.0.0.1:8000/pregreg" class="nav-item nav-link">Pregnancy Registration</a>
+                    <a href="http://127.0.0.1:8000/famdet" class="nav-item nav-link">Family Details</a>
+                    <a href="http://127.0.0.1:8000/asharep" class="nav-item nav-link">Asha Report</a>
+
+
+                    <a href="http://127.0.0.1:8000/logout" class="nav-item nav-link">Logout</a>
+
+                    {% else %}
+                    
+
+                    <div class="mt-6 pt-2">
+
+                        <a href="http://127.0.0.1:8000/userreg" class="nav-item nav-link"> <input class="btn btn-secondary btn-lg" type="submit" value=" USER REGISTER"  name="submit" style="height: 55px; width:160px"/></a>
+                       
+                      </div>
+
+
+
+                    <div class="mt-6 pt-2">
+
+                        <a href="http://127.0.0.1:8000/login" class="nav-item nav-link"> <input class="btn btn-primary btn-lg" type="submit" value="LOGIN"  name="submit" style="height:55px; width:125px"/></a>
+                       
+                      </div>
+                    {% endif %}
+
+                    
+                    
+                  
+                </div>
+               
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+   {% endblock %}

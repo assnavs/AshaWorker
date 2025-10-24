@@ -1,0 +1,72 @@
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+    
+   
+    <div class="card shadow-2-strong card-registration" style="border-radius: 15x;">
+
+        <h1 class="display-4 text-uppercase text-center mt-5 mb-5">Family Details</h1>
+        <div>
+            <div class="contact-form bg-white rounded p-5">
+                <div class="mt-4 pt-2" align="right">
+                    <a href="fcview" class="nav-item nav-link"><input class="btn btn-danger btn-lg" type="submit" value="VIEW ALL" style="height:55px; width:125px"  name="submit"/></a>
+                </div><br>
+                <form method="POST" action="famdet">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div  class="col-md-12">
+                            <div class="control-group">
+                                <label class="form-label" for="lastName">Husband Name</label>
+                                <input type="text" class="form-control form-control-lg"  id=""  name="husbent_name" required/>
+                              
+                            </div>
+                        </div>
+                        <div  class="col-md-12">
+                            <div class="control-group">
+                                <label class="form-label" for="lastName">Husband Age</label>
+                                <input type="text" class="form-control form-control-lg"  id=""  name="husbent_age" required/>
+                              
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Husband Aadhar Number</label>
+                        <input type="text" class="form-control form-control-lg" PATTERN="[0-9]{12}"  title="enter 14 digits" id="" name="h_aadhar_number" required/>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Husband Job</label>
+                        <input type="text" class="form-control form-control-lg"  id="" name="husbent_job" required/>
+                        
+                    </div>
+                    
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Consulting Hospital</label>
+                        <input type="text" class="form-control form-control-lg"  id="" name="consult_hospital" required/>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Aadhar Number</label>
+                        <input type="text" class="form-control form-control-lg"  id="" name="h_aadhar_number" required/>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Ward Name</label>
+                        <input type="text" class="form-control form-control-lg"  id="" name="wardname" required/>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Ward Number</label>
+                        <input type="text" class="form-control form-control-lg"  id="" name="wardnumber" required/>
+                        
+                    </div>
+                    <div class="mt-4 pt-2" align="center" >
+                        <input class="btn btn-primary btn-lg" type="submit" value="REGISTER"  name="submit"/>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+    {% endblock %}

@@ -1,0 +1,39 @@
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+    
+   
+    <div class="card shadow-2-strong card-registration" style="border-radius: 15x;">
+
+        <h1 class="display-4 text-uppercase text-center mt-5 mb-5">ASK QUESTIONS</h1>
+        <div>
+            <div class="contact-form bg-white rounded p-5">
+                <div class="mt-4 pt-2" align="right">
+                </div><br>
+                <form method="POST" action="adduserask">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div  class="col-md-12">
+                            <div class="control-group">
+                                <label class="form-label" for="lastName">Date</label>
+                                <input type="date" class="form-control form-control-lg"  id=""  name="date" required/>
+                              
+                            </div>
+                        </div>
+                        <div  class="col-md-12">
+                            <div class="control-group">
+                                <label class="form-label" for="lastName">Question</label>
+                                <input type="text" class="form-control form-control-lg"  id=""  name="question" required/>
+                              
+                            </div>
+                        </div>
+                       
+                    <div class="mt-4 pt-2" >
+                        <input class="btn btn-primary btn-lg" type="submit" value="SAVE"  name="submit"/>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+    {% endblock %}

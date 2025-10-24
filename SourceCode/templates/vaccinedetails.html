@@ -1,0 +1,68 @@
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+    
+   
+    <div class="card shadow-2-strong card-registration" style="border-radius: 15x;">
+
+        <h1 class="display-4 text-uppercase text-center mt-5 mb-5">ASHA REPORTS </h1>
+        
+        <div>
+            <div class="contact-form bg-white rounded p-5">
+                <div class="mt-4 pt-2" align="right">
+                    <a href="arview" class="nav-item nav-link"><input class="btn btn-danger btn-lg" type="submit" value="VIEW ALL" style="height:55px; width:125px"  name="submit"/></a>
+                </div><br>
+                <form method="POST" action="asharep">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div  class="col-md-12">
+                            <div class="control-group">
+                                <label class="form-label" for="lastName">Subject</label>
+                                <input type="text" class="form-control form-control-lg"  id="" required name="subject" required/>
+                              
+                            </div>
+                        </div>
+                        <div  class="col-md-12">
+                            <div class="control-group">
+                                <label class="form-label" for="lastName">Description</label>
+                                <input type="text" class="form-control form-control-lg"  id="" required name="description" required/>
+                              
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">No:of Pregnant Womens</label>
+                        <input type="text" class="form-control form-control-lg"  id="" required name="no_pregnent_womens" required/>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">No:of vacination child</label>
+                        <input type="text" class="form-control form-control-lg"  id="" required name="no_vacination_child" required/>
+                        
+                    </div>
+                    
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Ward Number</label>
+                        <input type="text" class="form-control form-control-lg"  required="" name="ward_no" required/>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Panjayath</label>
+                        <input type="text" class="form-control form-control-lg"  requiredd="" name="panchayat" required/>
+                        
+                    </div>
+                    
+                    <div class="mt-4 pt-2" align="center" >
+                        <input class="btn btn-primary btn-lg" type="submit" value="SUBMIT" style="height:55px; width:125px" name="submit"/>
+                      </div>
+
+                     
+                    
+                </form>
+               
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+    {% endblock %}

@@ -1,0 +1,84 @@
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+    
+   
+    <div class="card shadow-2-strong card-registration" style="border-radius: 15x;">
+
+        <h1 class="display-4 text-uppercase text-center mt-5 mb-5">Immunisation Details</h1>
+        <div>
+            <div class="contact-form bg-white rounded p-5">
+                <div class="mt-4 pt-2" align="right">
+                </div><br>
+                <form method="POST" action="vacreg">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div  class="col-md-12">
+                            <div class="control-group">
+                                <label class="form-label" for="lastName">Father's Name</label>
+                                <input type="text" class="form-control form-control-lg"  id=""  required name="father_name" required/>
+                              
+                            </div>
+                        </div>
+                        <div  class="col-md-12">
+                            <div class="control-group">
+                                <label class="form-label" for="lastName">Mother's Name</label> 
+                                <input type="text" class="form-control form-control-lg"  id="" required  name="mother_name" required/>
+                              
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Child Name</label>
+                        <input type="text" class="form-control form-control-lg" required  id="" name="child_name" required/>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">House Number</label>
+                        <input type="text" class="form-control form-control-lg"  id="" name="house_number" required/>
+                        
+                    </div>
+                    
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Ward Number</label>
+                        <input type="text" class="form-control form-control-lg"  id="" name="ward_no" required/>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Date Of Birth</label>
+                        <input type="date" class="form-control form-control-lg"  id="" name="dob" required/>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Age</label>
+                        <input type="text" class="form-control form-control-lg"  id="" name="age" required/>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Vaccine Details</label>
+                        <input type="text" class="form-control form-control-lg"  id="" name="vaccine_details" required/>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Phone Number</label>
+                        <input type="text" pattern="[0-9]{10}" title="enter 10 digits" class="form-control form-control-lg"  id="" name="phone_no" required/>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Place</label>
+                        <input type="text" class="form-control form-control-lg" required id="" name="place" required/>
+                        
+                    </div>
+                    
+                    <div class="mt-4 pt-2" align="center" >
+                        <input class="btn btn-primary btn-lg" type="submit" value="SUBMIT" style="height:55px; width:125px" name="submit"/>
+                      </div>
+
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+    {% endblock %}

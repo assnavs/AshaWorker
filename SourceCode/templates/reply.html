@@ -1,0 +1,36 @@
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+    
+   
+    <div class="card shadow-2-strong card-registration" style="border-radius: 15x;">
+
+        <h1 class="display-4 text-uppercase text-center mt-5 mb-5">REPLY</h1>
+        <div>
+            <div class="contact-form bg-white rounded p-5">
+                <div id="success"></div>
+                <form method="POST" action="adduserreply">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div  class="col-md-12">
+                            <div class="control-group">
+                                <label class="form-label" for="lastName">Reply</label>
+                                <input type="text" class="form-control form-control-lg"  required id=""  name="reply" required/>
+                              
+                            </div>
+							<div class="control-group">
+                                <label class="form-label" for="lastName"></label>
+                                <input type="hidden" class="form-control form-control-lg" required id=""  value="{{result.id}}"name="qid" required/>
+                              
+                            </div>
+                        </div>
+                       
+                    <div class="mt-4 pt-2" >
+                        <input class="btn btn-primary btn-lg" type="submit" value="Save"  name="submit"/>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+    {% endblock %}

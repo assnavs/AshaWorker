@@ -1,0 +1,32 @@
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+
+
+
+    <!-- Services Start -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <h1 class="display-4 text-uppercase text-center mb-5">PROFILE</h1>
+            <div class="row">
+                <div class="col-lg-6 mb-2">
+                    <div class="service-item rounded p-5 mb-4">
+                        <i class="fa fa-3x fas fa-hands text-primary mb-4"></i>
+                        <h4 class="text-uppercase mb-4">Name:{{result.name}}<span class="d-block text-body"></span></h4>
+                        <p class="m-0">Address:{{result.address}}</p>
+                        <p class="m-0">Ward Number:{{result.ward_number}}</p>
+                        <p class="m-0">Panchayat:{{result.panchayat}}</p>
+                        <p class="m-0">Email:{{result.email}}</p>
+                        <p class="m-0">Phone Number:{{result.number}}</p>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Services End -->
+
+
+
+    {% include 'footer.html' %}
+    {% endblock %}

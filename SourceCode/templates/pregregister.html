@@ -1,0 +1,94 @@
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+    
+   
+    <div class="card shadow-2-strong card-registration" style="border-radius: 15x;">
+
+        <h1 class="display-4 text-uppercase text-center mt-5 mb-5">PREGNANCY REGISTRATION</h1>
+        <div>
+            <div class="contact-form bg-white rounded p-5">
+                <div class="mt-4 pt-2" align="right">
+                    <a href="pcview" class="nav-item nav-link"><input class="btn btn-danger btn-lg" type="submit" value="VIEW ALL" style="height:55px; width:125px"  name="submit"/></a>
+                </div><br>
+                <form method="POST" action="pregreg">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        <div  class="col-md-12">
+                            <div class="control-group">
+                                <label class="form-label" for="lastName">Ward Number</label>
+                                <input type="text" class="form-control form-control-lg"  id="" required  name="ward_number" required/>
+                              
+                            </div>
+                        </div>
+                        <div  class="col-md-12">
+                            <div class="control-group">
+                                <label class="form-label" for="lastName">House Number</label>
+                                <input type="text" class="form-control form-control-lg"  id=""  required name="house_number" required/>
+                              
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="control-group">
+                                <label class="form-label" for="lastName">Name</label>
+                                <input type="text" class="form-control form-control-lg" required id="" name="name" required/>
+                               
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Pregnancy Confirmation Date</label>
+                        <input type="date" class="form-control form-control-lg"  id="" name="con_date" required/>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Last Periods Date</label>
+                        <input type="date" class="form-control form-control-lg"  id="" name="last_periods_date" required/>
+                        
+                    </div>
+                    
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Blood Group</label>
+                        <input type="text" class="form-control form-control-lg"  id="" name="blood_group" required/>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Weight</label>
+                        <input type="text" class="form-control form-control-lg"  id="" name="weight" required/>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Height</label>
+                        <input type="text" class="form-control form-control-lg" required  id="" name="height" required/>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">DOB</label>
+                        <input type="date" class="form-control form-control-lg"  required id="" name="dob" required/>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Last Checkup Date</label>
+                        <input type="date" class="form-control form-control-lg"  id="" required name="last_checkup_date" required/>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Disease</label>
+                        <input type="text" class="form-control form-control-lg"  id="" required name="disease" required/>
+                        
+                    </div>
+                    <div class="control-group">
+                        <label class="form-label" for="lastName">Husbands Name</label>
+                        <input type="text" class="form-control form-control-lg"  id="" required name="husbands_name" required/>
+                        
+                    </div>
+                   
+                    <div class="mt-4 pt-2" >
+                        <input class="btn btn-primary btn-lg" type="submit" value="REGISTER"  name="submit"/>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+    {% endblock %}

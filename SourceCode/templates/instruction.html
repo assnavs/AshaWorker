@@ -1,0 +1,48 @@
+{% load static %}
+{% block content %}
+{% include 'header.html' %}
+    
+
+    <div class="card shadow-2-strong card-registration" style="border-radius: 15x;">
+
+        <h1 class="display-4 text-uppercase text-center mt-5 mb-5">INSTRUCTION FOR WORKERS</h1>
+        <div>
+            <div class="contact-form bg-white rounded p-5">
+                <div id="success"></div>
+                <form method="POST" action="ainstruction">
+                    {% csrf_token %}
+                    <div class="form-row">
+                        
+                        <div class="row">
+                            <label class="form-label" for="lastName">Choose Service</label>
+                            <div class="col-12">
+            
+                              <select class="select form-control-lg" required name="aser">
+                                
+                                <option value="Immunisation">Immunisation</option>
+                                <option value="Corona Care">Corona Care</option>
+                                <option value="Health Awareness">Health Awareness</option>
+                                <option value="Care For Pregnant Ladies">Care For Pregnant Ladies</option>
+                              </select>
+                              
+            
+                            </div>
+                          </div><br><br><br>
+
+                          <div  class="col-md-12">
+                            <div class="control-group">
+                                <label class="form-label" for="lastName">Instruction</label>
+                                <input type="text" class="form-control form-control-lg" required id=""  name="ains"/>
+                              
+                            </div>
+                        </div>
+                    
+                    <div class="mt-4 pt-2" >
+                        <input class="btn btn-primary btn-lg" type="submit" value="ADD"  name="submit"/>
+                      </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {% include 'footer.html' %}
+    {% endblock %}
